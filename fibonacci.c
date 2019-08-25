@@ -7,7 +7,7 @@ int main(void)
 {
     unsigned int x1 = 0, x2 = 1, x3;
 
-    for (size_t i = N - 2; i != 0; --i)
+    for (size_t i = N - 2; i > 0; --i) // Probably it checks against != 0 (jne)
     {
         printf("%u, ", x1);
         x3 = x1 + x2;
