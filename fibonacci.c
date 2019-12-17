@@ -1,22 +1,30 @@
-#include <stdio.h>
 #include <stddef.h>
+#include <stdlib.h>
 
-#define N 20
-
-int main(void)
+unsigned int *fibonacci(size_t n)
 {
-    unsigned int x1 = 0, x2 = 1, x3;
+    unsigned int *arr;
+    arr = (unsigned int*)malloc(n*sizeof(unsigned int));
 
-    for (size_t i = N - 2; i > 0; --i) // Probably it checks against != 0 (jne)
-    {
-        printf("%u, ", x1);
-        x3 = x1 + x2;
-        x1 = x2;
-        x2 = x3;
+    if(n == 0) {
+        return NULL;
+    } else if(n == 1) {
+        arr[0]=0;
+        return arr;
+    } else if(n == 2) {
+        arr[0]=0;
+        arr[1]=1;
+        return arr;
+    } else {
+        size_t i;
+        
+        arr[0]=0;
+        arr[1]=1;
+
+        for(i = 2; i < n; ++i) {            // Array indexing seems more idiomatic
+            arr[i] = arr[i-1] + arr[i-2];
+        }      
+            
+        return arr;
     }
-
-    printf("%u, ", x1);
-    printf("%u", x2);
-
-    return 0;
 }
