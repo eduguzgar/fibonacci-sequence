@@ -4,7 +4,7 @@
 unsigned int *fibonacci(size_t n)
 {
     unsigned int *arr;
-    arr = (unsigned int*)malloc(n*sizeof(unsigned int));
+    arr = (unsigned int*)malloc(n*sizeof(unsigned int));    // Remember the callee to free it
 
     if(n == 0) {
         return NULL;
