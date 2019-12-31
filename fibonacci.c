@@ -8,10 +8,10 @@ unsigned int *fibonacci(size_t n)
     if (n == 0) {
         return NULL;
     } else if (n == 1) {
-        arr = (unsigned int*)malloc(n*sizeof(unsigned int));
+        arr = (unsigned int*)malloc(sizeof(unsigned int));
         arr[0] = 0;
     } else if (n == 2) {
-        arr = (unsigned int*)malloc(n*sizeof(unsigned int));
+        arr = (unsigned int*)malloc(2*sizeof(unsigned int));
         arr[0] = 0;
         arr[1] = 1;
     } else {
