@@ -1,21 +1,17 @@
+#include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
 
-unsigned int *fibonacci(size_t n)
+void fibonacci(unsigned int arr[], size_t n)
 {
-    unsigned int *arr; // Remember the caller to free it, unless n=0
-
     if (n == 0) {
-        return NULL;
+        return;
     } else if (n == 1) {
-        arr = (unsigned int*)malloc(sizeof(unsigned int));
         arr[0] = 0;
     } else if (n == 2) {
-        arr = (unsigned int*)malloc(2*sizeof(unsigned int));
         arr[0] = 0;
         arr[1] = 1;
     } else {
-        arr = (unsigned int*)malloc(n*sizeof(unsigned int));
         arr[0] = 0;
         arr[1] = 1;
 
@@ -24,5 +20,35 @@ unsigned int *fibonacci(size_t n)
             arr[i] = arr[i-1] + arr[i-2];
         }
     }
-    return arr;
+}
+
+int main(void)
+{
+    unsigned int *arr;
+    size_t n;
+
+    puts("How many numbers do you want (N)?");
+    scanf("%u", &n);
+    
+    arr = (unsigned int*)malloc(n*sizeof(unsigned int));
+
+    if(arr == NULL) {
+        return EXIT_FAILURE;
+    }
+
+    fibonacci(arr, n);
+
+    size_t i;
+    for(i = 0; i < n-1; ++i) {
+        printf("%u, ", arr[i]);
+    }
+
+    printf("%u", arr[i]);
+    
+    free(arr);
+
+    putchar('\n');
+    
+    system("pause");
+    return EXIT_SUCCESS;
 }
