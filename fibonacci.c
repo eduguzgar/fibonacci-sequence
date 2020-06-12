@@ -49,6 +49,8 @@ int main(void)
 
     putchar('\n');
     
+    getchar();
+    
     puts("Press any key to continue ... ");
     getchar();
     
