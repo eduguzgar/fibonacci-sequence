@@ -30,6 +30,11 @@ int main(void)
     puts("How many numbers do you want (N)?");
     scanf("%u", &n);
     
+    if(n == 0) {
+        getchar();
+        return EXIT_SUCCESS;
+    }
+    
     arr = (unsigned int*)malloc(n*sizeof(unsigned int));
 
     if(arr == NULL) {
