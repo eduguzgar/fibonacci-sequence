@@ -31,6 +31,7 @@ int main(void)
     scanf("%u", &n);
     
     if(n == 0) {
+        puts("Press any key to continue ... ");
         getchar();
         return EXIT_SUCCESS;
     }
