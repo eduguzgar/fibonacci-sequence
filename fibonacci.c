@@ -31,9 +31,9 @@ int main(void)
     scanf("%u", &n);
     
     if(n == 0) {
-		putchar('\n');
-		fflush(stdin);
-		puts("Press ENTER to continue ... ");
+	putchar('\n');
+	fflush(stdin);
+	puts("Press ENTER to continue ... ");
         getchar();
         return EXIT_SUCCESS;
     }
