@@ -31,7 +31,9 @@ int main(void)
     scanf("%u", &n);
     
     if(n == 0) {
-        puts("Press any key to continue ... ");
+		putchar('\n');
+		fflush(stdin);
+		puts("Press ENTER to continue ... ");
         getchar();
         return EXIT_SUCCESS;
     }
@@ -53,11 +55,11 @@ int main(void)
     
     free(arr);
 
-    putchar('\n');
+    printf("\n\n");
     
-    getchar();
-    
-    puts("Press any key to continue ... ");
+	fflush(stdin);
+	
+    puts("Press ENTER to continue ... ");
     getchar();
     
     return EXIT_SUCCESS;
