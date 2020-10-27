@@ -57,7 +57,7 @@ int main(void)
 
     printf("\n\n");
     
-	fflush(stdin);
+    fflush(stdin);
 	
     puts("Press ENTER to continue ... ");
     getchar();
