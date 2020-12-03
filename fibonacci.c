@@ -30,7 +30,8 @@ int main(void)
     puts("How many numbers do you want (N)?");
     scanf("%u", &n);
     
-    if(n == 0) {
+    if(n == 0) 
+    {
 	putchar('\n');
 	fflush(stdin);
 	puts("Press ENTER to continue ... ");
@@ -40,14 +41,16 @@ int main(void)
     
     arr = (unsigned int*)malloc(n*sizeof(unsigned int));
 
-    if(arr == NULL) {
+    if(arr == NULL) 
+    {
         return EXIT_FAILURE;
     }
 
     fibonacci(arr, n);
 
     size_t i;
-    for(i = 0; i < n-1; ++i) {
+    for(i = 0; i < n-1; ++i) 
+    {
         printf("%u, ", arr[i]);
     }
 
