@@ -18,8 +18,7 @@ void fibonacci(unsigned int arr[], size_t n)
     for (i = 2; i < n % 2 + 2; ++i) {   // K = 2
         arr[i] = arr[i-1] + arr[i-2];
     }
-
-    for (; i < n; i+=2) {               // K = 2
+    for (; i < n; i+=2) {
         arr[i] = arr[i-1] + arr[i-2];
         arr[i+1] = arr[i] + arr[i-1];
     }
