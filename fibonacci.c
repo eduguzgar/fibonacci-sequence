@@ -24,24 +24,41 @@ void fibonacci(unsigned int arr[], size_t n)
     }
 }
 
+void print_fibonnaci(unsigned int arr[], size_t n)
+{
+    size_t i;
+    for(i = 0; i < n-1; ++i)
+    {
+        printf("%u, ", arr[i]);
+    }
+
+    printf("%u", arr[i]);
+}
+
 int main(void)
 {
     unsigned int *arr;
-    size_t n;
+    int n;
 
     puts("How many numbers do you want (N)?");
-    scanf("%u", &n);
-    
-    if(n == 0)
+    if(scanf("%d", &n) != 1)
     {
-        putchar('\n');
-        fflush(stdin);
-        puts("Press ENTER to continue ... ");
-        getchar();
+        fprintf(stderr, "Error: Invalid input format\n");
+        return EXIT_FAILURE;
+    }
+
+    if(n < 0)
+    {
+        fprintf(stderr, "Error: Invalid input format\n");
         return EXIT_SUCCESS;
     }
-    
-    arr = (unsigned int*)malloc(n*sizeof(unsigned int));
+
+    if(n == 0)
+    {
+        return EXIT_SUCCESS;
+    }
+
+    arr = (unsigned int*)malloc((size_t)n * sizeof(unsigned int));
 
     if(arr == NULL)
     {
@@ -50,22 +67,11 @@ int main(void)
 
     fibonacci(arr, n);
 
-    size_t i;
-    for(i = 0; i < n-1; ++i)
-    {
-        printf("%u, ", arr[i]);
-    }
+    printf("\n");
+    print_fibonnaci(arr, n);
+    printf("\n");
 
-    printf("%u", arr[i]);
-    
     free(arr);
 
-    printf("\n\n");
-    
-    fflush(stdin);
-    
-    puts("Press ENTER to continue ... ");
-    getchar();
-    
     return EXIT_SUCCESS;
 }
