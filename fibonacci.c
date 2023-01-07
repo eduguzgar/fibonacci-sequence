@@ -50,7 +50,7 @@ int main(void)
     if(n < 0)
     {
         fprintf(stderr, "Error: Invalid input format\n");
-        return EXIT_SUCCESS;
+        return EXIT_FAILURE;
     }
 
     if(n == 0)
